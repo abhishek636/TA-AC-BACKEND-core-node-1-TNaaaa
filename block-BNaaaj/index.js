@@ -2,13 +2,15 @@ console.log('Welcome to Nodejs');
 
 var os = require('os');
 
-console.log(os.cpus());
+var cpus = os.cpus().length;
 
-console.log(os.freemem());
+var freeM = os.freemem();
 
-console.log(os.uptime());
+var uptime = os.uptime();
 
-console.log(os.version());
+console.log(cpus, freeM, uptime);
+
+var {readFile, unlink} = require('fs');
 
 buff1 = Buffer.alloc(12);
 
