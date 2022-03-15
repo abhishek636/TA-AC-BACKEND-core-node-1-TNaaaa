@@ -5,10 +5,10 @@ let server = http.createServer(handleRequest);
 
 function handleRequest(request, response) {
   console.log(request.method, request.url);
-  if (request.method === "GET" && request.url === "/index.html") {
+  if (request.method === "GET" && request.url === "/") {
     fs.createReadStream("./index.html").pipe(response);
   }
-  if (request.method === "GET" && request.url === "/about.html") {
+  if (request.method === "GET" && request.url === "/about") {
     response.setHeader("Content-Type", "text/html");
     fs.createReadStream("./about.html").pipe(response);
   }
